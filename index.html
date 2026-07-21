@@ -327,6 +327,34 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         </div>
       </article>
 
+      <article class="card featured reveal">
+        <div class="card-tags">
+          <span class="tag">Deep learning</span><span class="tag">Geospatial ML</span>
+          <span class="tag alt">CNN / U-Net</span><span class="tag alt">SHAP</span>
+        </div>
+        <h3>Soil Geochemistry Prediction from Satellite &amp; Geophysical Data</h3>
+        <p>
+          <strong>UBC MDS capstone with industry partner VRIFY</strong>: predicted soil geochemistry
+          for 10 target elements across 3 mining exploration areas from 130+ multi-source raster
+          features per site, to help guide site selection where soil sampling is sparse and expensive.
+          Cut 390 candidate features to a lean <strong>25</strong> via a two-stage elimination
+          (Spearman correlation filtering + Recursive Feature Elimination), and designed a
+          <strong>spatially-aware cross-validation</strong> scheme (grouped by 2&nbsp;km tiles) to keep
+          spatial autocorrelation from leaking between train and validation folds.
+        </p>
+        <p>
+          Built and benchmarked four deep-learning architectures, lightweight CNNs, an Expert CNN
+          framework with per-element candidate selection, U-Net with a ResNet-34 encoder, and the
+          DOFA foundation model, against VRIFY's production RandomForest baseline. The best model
+          reached <strong>R&sup2; 0.42</strong> versus <strong>0.34</strong> for the baseline, with
+          SHAP analysis confirming predictions were driven by genuine magnetic, gravity, and Sentinel
+          signal rather than spurious positional proxies.
+        </p>
+        <div class="card-links">
+          <span class="mono" style="color:var(--faint);font-size:13px">Confidential industry project · no public repo</span>
+        </div>
+      </article>
+
       <article class="card reveal">
         <div class="card-tags">
           <span class="tag">Hybrid RAG</span><span class="tag">BM25 + FAISS</span><span class="tag alt">Live app</span>
