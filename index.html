@@ -5,23 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Manikanth Goud Gurujala | Machine Learning Engineer</title>
 <meta name="description" content="Machine learning engineer in Vancouver, BC. I build retrieval systems that ground LLMs in real data: hybrid RAG pipelines, code knowledge graphs, and deployed data apps.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='30' cy='30' r='12' fill='%233FE0B0'/><circle cx='72' cy='50' r='9' fill='%2361D2F5'/><circle cx='38' cy='74' r='7' fill='%233FE0B0'/><path d='M30 30 L72 50 L38 74 Z' stroke='%233FE0B0' stroke-width='3' fill='none' opacity='.5'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='30' cy='30' r='12' fill='%23F2A33C'/><circle cx='72' cy='50' r='9' fill='%23EE6C4D'/><circle cx='38' cy='74' r='7' fill='%23F2A33C'/><path d='M30 30 L72 50 L38 74 Z' stroke='%23F2A33C' stroke-width='3' fill='none' opacity='.5'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0A0F0D;
-  --panel:#0F1613;
-  --panel-2:#121B17;
-  --line:#1F2C26;
-  --line-soft:#16211C;
-  --text:#E9F2ED;
-  --muted:#93A79D;
-  --faint:#5C6F66;
-  --accent:#3FE0B0;
-  --accent-2:#61D2F5;
-  --grad:linear-gradient(92deg,#3FE0B0 10%,#61D2F5 90%);
+  --bg:#0C0A08;
+  --panel:#141109;
+  --panel-2:#191309;
+  --line:#2B2317;
+  --line-soft:#1E1811;
+  --text:#F3EDE2;
+  --muted:#A99C87;
+  --faint:#6F6350;
+  --accent:#F2A33C;
+  --accent-2:#EE6C4D;
+  --grad:linear-gradient(92deg,#F2A33C 10%,#EE6C4D 90%);
   --sans:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   --w:1080px;
@@ -40,17 +40,18 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-::selection{background:rgba(63,224,176,.28)}
+::selection{background:rgba(242,163,60,.30)}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 .wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
+#drifter{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .mono{font-family:var(--mono)}
 
 /* ---------- nav ---------- */
 .nav{
   position:sticky;top:0;z-index:50;
-  background:rgba(10,15,13,.82);
+  background:rgba(12,10,8,.82);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line-soft);
 }
@@ -61,7 +62,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
   width:26px;height:26px;flex:none;border-radius:7px;
   background:var(--grad);
   display:grid;place-items:center;
-  color:#07120E;font-family:var(--mono);font-size:11px;font-weight:600;
+  color:#1A1206;font-family:var(--mono);font-size:11px;font-weight:600;
 }
 .nav-links{display:flex;align-items:center;gap:26px;list-style:none}
 .nav-links a{color:var(--muted);font-size:14px;font-weight:500}
@@ -79,8 +80,8 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 .hero-glow{
   position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(700px 340px at 78% 8%,rgba(63,224,176,.10),transparent 65%),
-    radial-gradient(600px 300px at 12% 92%,rgba(97,210,245,.07),transparent 65%);
+    radial-gradient(700px 340px at 78% 8%,rgba(242,163,60,.10),transparent 65%),
+    radial-gradient(600px 300px at 12% 92%,rgba(238,108,77,.07),transparent 65%);
 }
 .hero-inner{position:relative;padding:110px 24px 96px;max-width:var(--w);margin:0 auto}
 .eyebrow{
@@ -104,8 +105,8 @@ h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:tex
   transition:transform .15s ease,border-color .15s ease,background .15s ease;
 }
 .btn:hover{text-decoration:none;transform:translateY(-1px)}
-.btn-primary{background:var(--accent);color:#06110C}
-.btn-primary:hover{background:#5BEAC0}
+.btn-primary{background:var(--accent);color:#1A1206}
+.btn-primary:hover{background:#FFBE5C}
 .btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.015)}
 .btn-ghost:hover{border-color:var(--accent)}
 
@@ -147,16 +148,16 @@ section+section{border-top:1px solid var(--line-soft)}
   padding:26px;
   transition:transform .18s ease,border-color .18s ease;
 }
-.card:hover{transform:translateY(-3px);border-color:#2E4438}
+.card:hover{transform:translateY(-3px);border-color:#46351C}
 .card.featured{grid-column:1/-1;background:linear-gradient(180deg,var(--panel-2),var(--panel))}
 .card-tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{
   font-family:var(--mono);font-size:11px;font-weight:500;
   letter-spacing:.08em;text-transform:uppercase;
-  color:var(--accent);border:1px solid rgba(63,224,176,.30);
+  color:var(--accent);border:1px solid rgba(242,163,60,.32);
   border-radius:999px;padding:3px 10px;
 }
-.tag.alt{color:var(--accent-2);border-color:rgba(97,210,245,.30)}
+.tag.alt{color:var(--accent-2);border-color:rgba(238,108,77,.32)}
 .card h3{font-size:1.3rem;font-weight:700;letter-spacing:-.015em}
 .card p{color:var(--muted);font-size:.96rem;max-width:72ch}
 .card p strong{color:var(--text);font-weight:600}
@@ -241,12 +242,14 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
 .card::before{
   content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
   opacity:0;transition:opacity .3s ease;
-  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(63,224,176,.09),transparent 60%);
+  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(242,163,60,.08),transparent 60%);
 }
 .card:hover::before{opacity:1}
 </style>
 </head>
 <body>
+
+<canvas id="drifter" aria-hidden="true"></canvas>
 
 <nav class="nav" aria-label="Main">
   <div class="wrap nav-inner">
@@ -571,7 +574,7 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         x:Math.random()*W,y:Math.random()*H,
         vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
         r:1.2+Math.random()*1.8,
-        hue:Math.random()<.72?'63,224,176':'97,210,245'
+        hue:Math.random()<.72?'242,163,60':'238,108,77'
       });
     }
   }
@@ -615,6 +618,110 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
   });
   c.parentElement.addEventListener('pointerleave',function(){mouse.x=-9999;mouse.y=-9999});
   if(reduce){draw()}else{requestAnimationFrame(step)}
+})();
+
+/* Drifting data crystal: a wireframe icosahedron that travels behind
+   the page, swinging from side to side as you scroll between sections. */
+(function(){
+  var c=document.getElementById('drifter');
+  if(!c) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){c.style.display='none';return}
+  var ctx=c.getContext('2d');
+  var W=0,H=0;
+
+  function resize(){
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    W=window.innerWidth;H=window.innerHeight;
+    c.width=W*dpr;c.height=H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  /* icosahedron geometry */
+  var t=(1+Math.sqrt(5))/2;
+  var V=[[-1,t,0],[1,t,0],[-1,-t,0],[1,-t,0],[0,-1,t],[0,1,t],
+         [0,-1,-t],[0,1,-t],[t,0,-1],[t,0,1],[-t,0,-1],[-t,0,1]]
+    .map(function(v){var l=Math.hypot(v[0],v[1],v[2]);return[v[0]/l,v[1]/l,v[2]/l]});
+  var E=[];
+  for(var i=0;i<V.length;i++)for(var j=i+1;j<V.length;j++){
+    var d=Math.hypot(V[i][0]-V[j][0],V[i][1]-V[j][1],V[i][2]-V[j][2]);
+    if(d<1.1)E.push([i,j]);
+  }
+
+  /* waypoints along the page: x/y as viewport fractions, s = scale */
+  var pts=[
+    {p:0,   x:.86,y:.64,s:.55},
+    {p:.16, x:.10,y:.46,s:.80},
+    {p:.38, x:.88,y:.52,s:.70},
+    {p:.58, x:.12,y:.48,s:.85},
+    {p:.78, x:.85,y:.50,s:.70},
+    {p:1,   x:.50,y:.38,s:1.05}
+  ];
+  function ease(a){return a*a*(3-2*a)}
+  function target(){
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    var p=max>0?Math.min(1,Math.max(0,window.scrollY/max)):0;
+    for(var i=0;i<pts.length-1;i++){
+      if(p<=pts[i+1].p){
+        var a=ease((p-pts[i].p)/(pts[i+1].p-pts[i].p));
+        return{x:(pts[i].x+(pts[i+1].x-pts[i].x)*a)*W,
+               y:(pts[i].y+(pts[i+1].y-pts[i].y)*a)*H,
+               s:pts[i].s+(pts[i+1].s-pts[i].s)*a};
+      }
+    }
+    var l=pts[pts.length-1];
+    return{x:l.x*W,y:l.y*H,s:l.s};
+  }
+
+  var cur=null,rotX=.6,rotY=0,lastY=window.scrollY,time=0;
+
+  function draw(cx,cy,s){
+    ctx.clearRect(0,0,W,H);
+    var R=Math.min(W,H)*.17*s;
+    var cXr=Math.cos(rotX),sXr=Math.sin(rotX),cYr=Math.cos(rotY),sYr=Math.sin(rotY);
+    var P=V.map(function(v){
+      var x=v[0]*cYr+v[2]*sYr, z=-v[0]*sYr+v[2]*cYr;
+      var y=v[1]*cXr-z*sXr;   z=v[1]*sXr+z*cXr;
+      var f=2.6/(2.6+z);
+      return{x:cx+x*R*f,y:cy+y*R*f,z:z};
+    });
+    var g=ctx.createRadialGradient(cx,cy,0,cx,cy,R*2.4);
+    g.addColorStop(0,'rgba(242,163,60,.07)');
+    g.addColorStop(1,'rgba(242,163,60,0)');
+    ctx.fillStyle=g;
+    ctx.fillRect(cx-R*2.4,cy-R*2.4,R*4.8,R*4.8);
+    for(var i=0;i<E.length;i++){
+      var a=P[E[i][0]],b=P[E[i][1]];
+      var depth=1-((a.z+b.z)/2+1)/2;
+      ctx.strokeStyle='rgba(242,163,60,'+(.07+.28*depth).toFixed(3)+')';
+      ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+    }
+    for(var k=0;k<P.length;k++){
+      var p=P[k],dp=1-(p.z+1)/2;
+      ctx.fillStyle='rgba(238,108,77,'+(.22+.5*dp).toFixed(3)+')';
+      ctx.beginPath();ctx.arc(p.x,p.y,1.5+1.6*dp,0,Math.PI*2);ctx.fill();
+    }
+  }
+
+  function frame(){
+    var tg=target();
+    if(!cur)cur={x:tg.x,y:tg.y,s:tg.s};
+    cur.x+=(tg.x-cur.x)*.055;
+    cur.y+=(tg.y-cur.y)*.055;
+    cur.s+=(tg.s-cur.s)*.055;
+    var dv=window.scrollY-lastY;lastY=window.scrollY;
+    dv=Math.max(-40,Math.min(40,dv));
+    rotY+=.004+dv*.0014;
+    rotX+=.0022+dv*.0008;
+    time+=.016;
+    draw(cur.x,cur.y+Math.sin(time*.8)*10,cur.s);
+    requestAnimationFrame(frame);
+  }
+
+  resize();
+  window.addEventListener('resize',resize);
+  requestAnimationFrame(frame);
 })();
 
 /* Scroll reveal */
