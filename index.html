@@ -621,7 +621,8 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
 })();
 
 /* Drifting data crystal: a wireframe icosahedron that travels behind
-   the page, swinging from side to side as you scroll between sections. */
+   the page. Each vertex is a skill node; the section in view steers
+   its most relevant skill around to the front. */
 (function(){
   var c=document.getElementById('drifter');
   if(!c) return;
@@ -635,6 +636,7 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
     W=window.innerWidth;H=window.innerHeight;
     c.width=W*dpr;c.height=H*dpr;
     ctx.setTransform(dpr,0,0,dpr,0,0);
+    secOffsets=null;
   }
 
   /* icosahedron geometry */
@@ -646,6 +648,25 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
   for(var i=0;i<V.length;i++)for(var j=i+1;j<V.length;j++){
     var d=Math.hypot(V[i][0]-V[j][0],V[i][1]-V[j][1],V[i][2]-V[j][2]);
     if(d<1.1)E.push([i,j]);
+  }
+
+  /* one skill per vertex; per section, one is pulled to the front */
+  var SKILLS=['Python','PyTorch','RAG','SQL','Docker','LangChain',
+              'FAISS','Databricks','AWS','Streamlit','scikit-learn','Git'];
+  var FEATURE=[['top','Python'],['projects','RAG'],['experience','Databricks'],
+               ['skills','PyTorch'],['education','scikit-learn'],['contact','LangChain']]
+    .map(function(f){return{id:f[0],vi:SKILLS.indexOf(f[1])}});
+  var secOffsets=null;
+  function featured(){
+    if(!secOffsets){
+      secOffsets=FEATURE.map(function(f){
+        var el=document.getElementById(f.id);
+        return{top:el?el.offsetTop:0,vi:f.vi};
+      });
+    }
+    var y=window.scrollY+H*.45,vi=secOffsets[0].vi;
+    for(var i=0;i<secOffsets.length;i++)if(secOffsets[i].top<=y)vi=secOffsets[i].vi;
+    return vi;
   }
 
   /* waypoints along the page: x/y as viewport fractions, s = scale */
@@ -673,17 +694,37 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
     return{x:l.x*W,y:l.y*H,s:l.s};
   }
 
-  var cur=null,rotX=.6,rotY=0,lastY=window.scrollY,time=0;
+  /* rotation state as a 3x3 matrix so we can steer it */
+  var M=[1,0,0, 0,1,0, 0,0,1];
+  function rot(axis,ang){
+    var l=Math.hypot(axis[0],axis[1],axis[2]);
+    if(l<1e-6||!ang)return;
+    var x=axis[0]/l,y=axis[1]/l,z=axis[2]/l;
+    var s=Math.sin(ang),co=Math.cos(ang),o=1-co;
+    var R=[co+x*x*o,x*y*o-z*s,x*z*o+y*s,
+           y*x*o+z*s,co+y*y*o,y*z*o-x*s,
+           z*x*o-y*s,z*y*o+x*s,co+z*z*o];
+    var N=new Array(9);
+    for(var r=0;r<3;r++)for(var q=0;q<3;q++)
+      N[r*3+q]=R[r*3]*M[q]+R[r*3+1]*M[3+q]+R[r*3+2]*M[6+q];
+    M=N;
+  }
+  function apply(v){
+    return[M[0]*v[0]+M[1]*v[1]+M[2]*v[2],
+           M[3]*v[0]+M[4]*v[1]+M[5]*v[2],
+           M[6]*v[0]+M[7]*v[1]+M[8]*v[2]];
+  }
+  rot([1,0,0],.6);rot([0,1,0],.35);
 
-  function draw(cx,cy,s){
+  var cur=null,lastY=window.scrollY,time=0;
+
+  function draw(cx,cy,s,fi){
     ctx.clearRect(0,0,W,H);
     var R=Math.min(W,H)*.17*s;
-    var cXr=Math.cos(rotX),sXr=Math.sin(rotX),cYr=Math.cos(rotY),sYr=Math.sin(rotY);
     var P=V.map(function(v){
-      var x=v[0]*cYr+v[2]*sYr, z=-v[0]*sYr+v[2]*cYr;
-      var y=v[1]*cXr-z*sXr;   z=v[1]*sXr+z*cXr;
-      var f=2.6/(2.6+z);
-      return{x:cx+x*R*f,y:cy+y*R*f,z:z};
+      var r=apply(v);
+      var f=2.6/(2.6+r[2]);
+      return{x:cx+r[0]*R*f,y:cy+r[1]*R*f,z:r[2]};
     });
     var g=ctx.createRadialGradient(cx,cy,0,cx,cy,R*2.4);
     g.addColorStop(0,'rgba(242,163,60,.07)');
@@ -697,10 +738,18 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
       ctx.lineWidth=1;
       ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
     }
+    ctx.textBaseline='middle';
     for(var k=0;k<P.length;k++){
-      var p=P[k],dp=1-(p.z+1)/2;
+      var p=P[k],dp=1-(p.z+1)/2,isF=(k===fi);
       ctx.fillStyle='rgba(238,108,77,'+(.22+.5*dp).toFixed(3)+')';
       ctx.beginPath();ctx.arc(p.x,p.y,1.5+1.6*dp,0,Math.PI*2);ctx.fill();
+      var fs=(isF?12:9.5)*(.55+.45*dp);
+      ctx.font=(isF?'600 ':'500 ')+fs.toFixed(1)+'px "IBM Plex Mono",monospace';
+      ctx.textAlign=p.x>=cx?'left':'right';
+      ctx.fillStyle=isF
+        ?'rgba(242,163,60,'+(.45+.5*dp).toFixed(3)+')'
+        :'rgba(243,237,226,'+(.09+.38*dp).toFixed(3)+')';
+      ctx.fillText(SKILLS[k],p.x+(7+2*dp)*(p.x>=cx?1:-1),p.y);
     }
   }
 
@@ -712,10 +761,23 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
     cur.s+=(tg.s-cur.s)*.055;
     var dv=window.scrollY-lastY;lastY=window.scrollY;
     dv=Math.max(-40,Math.min(40,dv));
-    rotY+=.004+dv*.0014;
-    rotX+=.0022+dv*.0008;
+    /* scrolling tumbles it; the steering below re-settles it */
+    rot([0,1,0],dv*.0012);
+    rot([1,0,0],dv*.0007);
+    /* idle spin around the view axis keeps motion without
+       moving whichever vertex is facing front */
+    rot([0,0,1],.0016);
+    /* steer the featured skill toward the viewer (0,0,-1) */
+    var fi=featured();
+    var fv=apply(V[fi]);
+    var ang=Math.acos(Math.max(-1,Math.min(1,-fv[2])));
+    if(Math.hypot(fv[0],fv[1])<1e-4){
+      if(ang>1)rot([1,0,0],ang*.05);
+    }else{
+      rot([-fv[1],fv[0],0],ang*.05);
+    }
     time+=.016;
-    draw(cur.x,cur.y+Math.sin(time*.8)*10,cur.s);
+    draw(cur.x,cur.y+Math.sin(time*.8)*10,cur.s,fi);
     requestAnimationFrame(frame);
   }
 
