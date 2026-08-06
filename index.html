@@ -650,23 +650,23 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
     if(d<1.1)E.push([i,j]);
   }
 
-  /* one skill per vertex; per section, one is pulled to the front */
+  /* one skill per vertex; per section, the listed skills are pulled to the front */
   var SKILLS=['Python','PyTorch','RAG','SQL','Docker','LangChain',
               'FAISS','Databricks','AWS','Streamlit','scikit-learn','Git'];
   var FEATURE=[['top','Python'],['projects','RAG','Docker','SQL'],['experience','Databricks'],
                ['skills','PyTorch'],['education','scikit-learn'],['contact','LangChain']]
-    .map(function(f){return{id:f[0],vi:SKILLS.indexOf(f[1])}});
+    .map(function(f){return{id:f[0],vis:f.slice(1).map(function(s){return SKILLS.indexOf(s)})}});
   var secOffsets=null;
   function featured(){
     if(!secOffsets){
       secOffsets=FEATURE.map(function(f){
         var el=document.getElementById(f.id);
-        return{top:el?el.offsetTop:0,vi:f.vi};
+        return{top:el?el.offsetTop:0,vis:f.vis};
       });
     }
-    var y=window.scrollY+H*.45,vi=secOffsets[0].vi;
-    for(var i=0;i<secOffsets.length;i++)if(secOffsets[i].top<=y)vi=secOffsets[i].vi;
-    return vi;
+    var y=window.scrollY+H*.45,vis=secOffsets[0].vis;
+    for(var i=0;i<secOffsets.length;i++)if(secOffsets[i].top<=y)vis=secOffsets[i].vis;
+    return vis;
   }
 
   /* waypoints along the page: x/y as viewport fractions, s = scale */
@@ -740,7 +740,7 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
     }
     ctx.textBaseline='middle';
     for(var k=0;k<P.length;k++){
-      var p=P[k],dp=1-(p.z+1)/2,isF=(k===fi);
+      var p=P[k],dp=1-(p.z+1)/2,isF=fi.indexOf(k)>=0;
       ctx.fillStyle='rgba(238,108,77,'+(.22+.5*dp).toFixed(3)+')';
       ctx.beginPath();ctx.arc(p.x,p.y,1.5+1.6*dp,0,Math.PI*2);ctx.fill();
       var fs=(isF?12:9.5)*(.55+.45*dp);
@@ -767,14 +767,22 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
     /* idle spin around the view axis keeps motion without
        moving whichever vertex is facing front */
     rot([0,0,1],.0016);
-    /* steer the featured skill toward the viewer (0,0,-1) */
+    /* steer the featured skills' centroid toward the viewer (0,0,-1) */
     var fi=featured();
-    var fv=apply(V[fi]);
-    var ang=Math.acos(Math.max(-1,Math.min(1,-fv[2])));
-    if(Math.hypot(fv[0],fv[1])<1e-4){
-      if(ang>1)rot([1,0,0],ang*.05);
-    }else{
-      rot([-fv[1],fv[0],0],ang*.05);
+    var fv=[0,0,0];
+    for(var q=0;q<fi.length;q++){
+      var rv=apply(V[fi[q]]);
+      fv[0]+=rv[0];fv[1]+=rv[1];fv[2]+=rv[2];
+    }
+    var fl=Math.hypot(fv[0],fv[1],fv[2]);
+    if(fl>1e-4){
+      fv[0]/=fl;fv[1]/=fl;fv[2]/=fl;
+      var ang=Math.acos(Math.max(-1,Math.min(1,-fv[2])));
+      if(Math.hypot(fv[0],fv[1])<1e-4){
+        if(ang>1)rot([1,0,0],ang*.05);
+      }else{
+        rot([-fv[1],fv[0],0],ang*.05);
+      }
     }
     time+=.016;
     draw(cur.x,cur.y+Math.sin(time*.8)*10,cur.s,fi);
