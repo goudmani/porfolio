@@ -245,6 +245,30 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
   background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(242,163,60,.08),transparent 60%);
 }
 .card:hover::before{opacity:1}
+
+/* ---------- workflow viz ---------- */
+.card-split{display:grid;grid-template-columns:1.45fr 1fr;gap:8px 34px;align-items:center}
+.card-body{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card-viz{min-width:0}
+.card-viz svg{display:block;width:100%;height:auto}
+.wf .box{fill:rgba(255,255,255,.02);stroke:var(--line);stroke-width:1}
+.wf .box.hot{fill:rgba(242,163,60,.07);stroke:rgba(242,163,60,.45)}
+.wf text{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.06em;fill:var(--muted)}
+.wf text.hot{fill:var(--accent)}
+.wf text.sub{font-size:7.5px;fill:var(--faint)}
+.wf .flow{fill:none;stroke:rgba(242,163,60,.30);stroke-width:1;stroke-dasharray:3 5;animation:wfdash 1.4s linear infinite}
+.wf .dot{fill:var(--accent-2);animation:wfdot var(--t,3s) linear infinite}
+@keyframes wfdash{to{stroke-dashoffset:-8}}
+@keyframes wfdot{
+  0%{opacity:0;transform:translate(0,0)}
+  12%{opacity:1}
+  88%{opacity:1}
+  100%{opacity:0;transform:translate(var(--dx,0px),var(--dy,0px))}
+}
+@media(max-width:860px){
+  .card-split{grid-template-columns:1fr}
+  .card-split .card-viz{max-width:360px}
+}
 </style>
 </head>
 <body>
@@ -311,6 +335,8 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
     </div>
     <div class="proj-grid">
       <article class="card featured reveal">
+       <div class="card-split">
+       <div class="card-body">
         <div class="card-tags">
           <span class="tag">GraphRAG</span><span class="tag">Knowledge graph</span>
           <span class="tag alt">LLM agents</span><span class="tag alt">Docker</span>
@@ -328,9 +354,37 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         <div class="card-links">
           <a href="https://github.com/goudmani/codeiq_source_code_knowledge_graph" target="_blank" rel="noopener">Code ↗</a>
         </div>
+       </div>
+       <div class="card-viz" aria-hidden="true">
+        <svg class="wf" viewBox="0 0 320 168">
+          <rect class="box" x="10" y="12" width="64" height="26" rx="6"/>
+          <text x="42" y="29" text-anchor="middle">REPO</text>
+          <rect class="box" x="104" y="12" width="88" height="26" rx="6"/>
+          <text x="148" y="29" text-anchor="middle">AST PARSE</text>
+          <line class="flow" x1="74" y1="25" x2="104" y2="25"/>
+          <path class="flow" d="M192 25 H236 V68"/>
+          <text class="sub" x="96" y="60">3,820 NODES · 25K EDGES</text>
+          <rect class="box hot" x="96" y="68" width="148" height="30" rx="7"/>
+          <text class="hot" x="170" y="87" text-anchor="middle">KNOWLEDGE GRAPH</text>
+          <line class="flow" x1="104" y1="98" x2="104" y2="124"/>
+          <line class="flow" x1="132" y1="124" x2="132" y2="98"/>
+          <rect class="box" x="60" y="124" width="88" height="26" rx="6"/>
+          <text x="104" y="141" text-anchor="middle">LLM AGENT</text>
+          <line class="flow" x1="148" y1="137" x2="196" y2="137"/>
+          <rect class="box" x="196" y="124" width="114" height="26" rx="6"/>
+          <text class="hot" x="253" y="141" text-anchor="middle">CITED ANSWER</text>
+          <circle class="dot" cx="74" cy="25" r="2.5" style="--dx:30px;--t:2.4s"/>
+          <circle class="dot" cx="104" cy="98" r="2.5" style="--dy:26px;--t:2.8s;animation-delay:.6s"/>
+          <circle class="dot" cx="132" cy="124" r="2.5" style="--dy:-26px;--t:2.8s;animation-delay:2s"/>
+          <circle class="dot" cx="148" cy="137" r="2.5" style="--dx:48px;--t:2.6s;animation-delay:1.2s"/>
+        </svg>
+       </div>
+       </div>
       </article>
 
       <article class="card featured reveal">
+       <div class="card-split">
+       <div class="card-body">
         <div class="card-tags">
           <span class="tag">Deep learning</span><span class="tag">Geospatial ML</span>
           <span class="tag alt">CNN / U-Net</span><span class="tag alt">SHAP</span>
@@ -356,6 +410,34 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         <div class="card-links">
           <span class="mono" style="color:var(--faint);font-size:13px">Confidential industry project · no public repo</span>
         </div>
+       </div>
+       <div class="card-viz" aria-hidden="true">
+        <svg class="wf" viewBox="0 0 320 168">
+          <rect class="box" x="10" y="10" width="86" height="22" rx="5"/>
+          <text x="53" y="25" text-anchor="middle">MAGNETICS</text>
+          <rect class="box" x="10" y="40" width="86" height="22" rx="5"/>
+          <text x="53" y="55" text-anchor="middle">GRAVITY</text>
+          <rect class="box" x="10" y="70" width="86" height="22" rx="5"/>
+          <text x="53" y="85" text-anchor="middle">SENTINEL-2</text>
+          <path class="flow" d="M96 21 H113 V51 H132"/>
+          <line class="flow" x1="96" y1="51" x2="132" y2="51"/>
+          <path class="flow" d="M96 81 H113 V51"/>
+          <rect class="box" x="132" y="38" width="100" height="26" rx="6"/>
+          <text x="182" y="55" text-anchor="middle">RFE 390→25</text>
+          <line class="flow" x1="182" y1="64" x2="182" y2="96"/>
+          <rect class="box hot" x="122" y="96" width="120" height="28" rx="7"/>
+          <text class="hot" x="182" y="114" text-anchor="middle">CNN / U-NET</text>
+          <text class="sub" x="250" y="107">SPATIAL CV</text>
+          <text class="sub" x="250" y="118">2 KM TILES</text>
+          <line class="flow" x1="182" y1="124" x2="182" y2="140"/>
+          <rect class="box" x="122" y="140" width="120" height="24" rx="6"/>
+          <text class="hot" x="182" y="156" text-anchor="middle">R² 0.65 MAP</text>
+          <circle class="dot" cx="96" cy="51" r="2.5" style="--dx:36px;--t:2.4s"/>
+          <circle class="dot" cx="182" cy="64" r="2.5" style="--dy:32px;--t:2.6s;animation-delay:.9s"/>
+          <circle class="dot" cx="182" cy="124" r="2.5" style="--dy:16px;--t:2.2s;animation-delay:1.8s"/>
+        </svg>
+       </div>
+       </div>
       </article>
 
       <article class="card reveal">
@@ -369,6 +451,31 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
           by Llama&nbsp;3.3&nbsp;70B with a web-search fallback. Evaluated with retrieval metrics and
           an LLM comparison study.
         </p>
+        <div class="card-viz" aria-hidden="true">
+          <svg class="wf" viewBox="0 0 560 64">
+            <rect class="box" x="8" y="14" width="84" height="26" rx="6"/>
+            <text x="50" y="31" text-anchor="middle">REVIEWS</text>
+            <text class="sub" x="50" y="54" text-anchor="middle">983K · 1.6M CHUNKS</text>
+            <path class="flow" d="M92 27 H112 V14 H132"/>
+            <path class="flow" d="M92 27 H112 V50 H132"/>
+            <rect class="box" x="132" y="4" width="72" height="20" rx="5"/>
+            <text x="168" y="18" text-anchor="middle">BM25</text>
+            <rect class="box" x="132" y="40" width="72" height="20" rx="5"/>
+            <text x="168" y="54" text-anchor="middle">FAISS</text>
+            <path class="flow" d="M204 14 H224 V27 H240"/>
+            <path class="flow" d="M204 50 H224 V27"/>
+            <rect class="box hot" x="240" y="14" width="64" height="26" rx="6"/>
+            <text class="hot" x="272" y="31" text-anchor="middle">RRF</text>
+            <line class="flow" x1="304" y1="27" x2="330" y2="27"/>
+            <rect class="box" x="330" y="14" width="92" height="26" rx="6"/>
+            <text x="376" y="31" text-anchor="middle">LLAMA 3.3</text>
+            <line class="flow" x1="422" y1="27" x2="448" y2="27"/>
+            <rect class="box" x="448" y="14" width="104" height="26" rx="6"/>
+            <text class="hot" x="500" y="31" text-anchor="middle">ANSWER</text>
+            <circle class="dot" cx="304" cy="27" r="2.5" style="--dx:26px;--t:2.2s"/>
+            <circle class="dot" cx="422" cy="27" r="2.5" style="--dx:26px;--t:2.2s;animation-delay:1s"/>
+          </svg>
+        </div>
         <div class="card-links">
           <a href="https://github.com/goudmani/Amazon_movie_recommendation_using_RAG" target="_blank" rel="noopener">Code ↗</a>
           <a href="https://informationbm25semantic.streamlit.app/" target="_blank" rel="noopener">Live demo ↗</a>
@@ -386,6 +493,25 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
           <strong>natural language via Anthropic's Claude</strong>, with reactive Altair charts and
           CSV export. Deployed on Posit Connect Cloud.
         </p>
+        <div class="card-viz" aria-hidden="true">
+          <svg class="wf" viewBox="0 0 560 64">
+            <rect class="box" x="8" y="14" width="96" height="26" rx="6"/>
+            <text x="56" y="31" text-anchor="middle">CRIME DATA</text>
+            <text class="sub" x="56" y="54" text-anchor="middle">1975–2015</text>
+            <line class="flow" x1="104" y1="27" x2="140" y2="27"/>
+            <rect class="box" x="140" y="14" width="120" height="26" rx="6"/>
+            <text x="200" y="31" text-anchor="middle">PLAIN ENGLISH</text>
+            <line class="flow" x1="260" y1="27" x2="296" y2="27"/>
+            <rect class="box hot" x="296" y="14" width="80" height="26" rx="6"/>
+            <text class="hot" x="336" y="31" text-anchor="middle">CLAUDE</text>
+            <line class="flow" x1="376" y1="27" x2="412" y2="27"/>
+            <rect class="box" x="412" y="14" width="140" height="26" rx="6"/>
+            <text x="482" y="31" text-anchor="middle">ALTAIR CHARTS</text>
+            <circle class="dot" cx="104" cy="27" r="2.5" style="--dx:36px;--t:2.4s"/>
+            <circle class="dot" cx="260" cy="27" r="2.5" style="--dx:36px;--t:2.4s;animation-delay:.8s"/>
+            <circle class="dot" cx="376" cy="27" r="2.5" style="--dx:36px;--t:2.4s;animation-delay:1.6s"/>
+          </svg>
+        </div>
         <div class="card-links">
           <a href="https://github.com/goudmani/US_crime_dashboard" target="_blank" rel="noopener">Code ↗</a>
           <a href="https://019c9723-a4d1-3cd7-eb5c-fa163f62eb99.share.connect.posit.cloud/" target="_blank" rel="noopener">Live demo ↗</a>
@@ -403,6 +529,29 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
           Codecov-tracked tests, an automated <strong>GitHub Actions release pipeline</strong> to
           TestPyPI (Python 3.10–3.13), and hosted documentation.
         </p>
+        <div class="card-viz" aria-hidden="true">
+          <svg class="wf" viewBox="0 0 560 64">
+            <rect class="box" x="8" y="14" width="76" height="26" rx="6"/>
+            <text x="46" y="31" text-anchor="middle">DATA</text>
+            <line class="flow" x1="84" y1="27" x2="116" y2="27"/>
+            <rect class="box" x="116" y="14" width="96" height="26" rx="6"/>
+            <text x="164" y="31" text-anchor="middle">CONTRACT</text>
+            <text class="sub" x="164" y="54" text-anchor="middle">SCHEMA · RANGES · DRIFT</text>
+            <line class="flow" x1="212" y1="27" x2="240" y2="27"/>
+            <rect class="box hot" x="240" y="14" width="96" height="26" rx="6"/>
+            <text class="hot" x="288" y="31" text-anchor="middle">VALIDATE</text>
+            <line class="flow" x1="336" y1="27" x2="364" y2="27"/>
+            <rect class="box" x="364" y="14" width="76" height="26" rx="6"/>
+            <text x="402" y="31" text-anchor="middle">REPORT</text>
+            <line class="flow" x1="440" y1="27" x2="468" y2="27"/>
+            <rect class="box" x="468" y="14" width="84" height="26" rx="6"/>
+            <text x="510" y="31" text-anchor="middle">TESTPYPI</text>
+            <text class="sub" x="510" y="54" text-anchor="middle">GH ACTIONS</text>
+            <circle class="dot" cx="84" cy="27" r="2.5" style="--dx:32px;--t:2.2s"/>
+            <circle class="dot" cx="336" cy="27" r="2.5" style="--dx:28px;--t:2.2s;animation-delay:.9s"/>
+            <circle class="dot" cx="440" cy="27" r="2.5" style="--dx:28px;--t:2.2s;animation-delay:1.7s"/>
+          </svg>
+        </div>
         <div class="card-links">
           <a href="https://github.com/UBC-MDS/DSCI_524_G26_Data_Validation" target="_blank" rel="noopener">Code ↗</a>
           <a href="https://ubc-mds.github.io/DSCI_524_G26_Data_Validation/" target="_blank" rel="noopener">Docs ↗</a>
@@ -418,6 +567,24 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
           A Quarto-powered data science blog exploring the intersection of data science, economics,
           and the AI labor market. Analysis written to be read, not just run.
         </p>
+        <div class="card-viz" aria-hidden="true">
+          <svg class="wf" viewBox="0 0 560 64">
+            <rect class="box" x="8" y="14" width="110" height="26" rx="6"/>
+            <text x="63" y="31" text-anchor="middle">JOBS DATA</text>
+            <line class="flow" x1="118" y1="27" x2="172" y2="27"/>
+            <rect class="box" x="172" y="14" width="110" height="26" rx="6"/>
+            <text x="227" y="31" text-anchor="middle">ANALYSIS</text>
+            <line class="flow" x1="282" y1="27" x2="336" y2="27"/>
+            <rect class="box hot" x="336" y="14" width="90" height="26" rx="6"/>
+            <text class="hot" x="381" y="31" text-anchor="middle">QUARTO</text>
+            <line class="flow" x1="426" y1="27" x2="470" y2="27"/>
+            <rect class="box" x="470" y="14" width="82" height="26" rx="6"/>
+            <text x="511" y="31" text-anchor="middle">STORY</text>
+            <circle class="dot" cx="118" cy="27" r="2.5" style="--dx:54px;--t:2.6s"/>
+            <circle class="dot" cx="282" cy="27" r="2.5" style="--dx:54px;--t:2.6s;animation-delay:.9s"/>
+            <circle class="dot" cx="426" cy="27" r="2.5" style="--dx:44px;--t:2.4s;animation-delay:1.8s"/>
+          </svg>
+        </div>
         <div class="card-links">
           <a href="https://github.com/goudmani/my-firstds-blog" target="_blank" rel="noopener">Code ↗</a>
         </div>
