@@ -5,23 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Manikanth Goud Gurujala | Machine Learning Engineer</title>
 <meta name="description" content="Machine learning engineer in Vancouver, BC. I build retrieval systems that ground LLMs in real data: hybrid RAG pipelines, code knowledge graphs, and deployed data apps.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='30' cy='30' r='12' fill='%23F2A33C'/><circle cx='72' cy='50' r='9' fill='%23EE6C4D'/><circle cx='38' cy='74' r='7' fill='%23F2A33C'/><path d='M30 30 L72 50 L38 74 Z' stroke='%23F2A33C' stroke-width='3' fill='none' opacity='.5'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='30' cy='30' r='12' fill='%232563EB'/><circle cx='72' cy='50' r='9' fill='%230EA5E9'/><circle cx='38' cy='74' r='7' fill='%232563EB'/><path d='M30 30 L72 50 L38 74 Z' stroke='%232563EB' stroke-width='3' fill='none' opacity='.5'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0C0A08;
-  --panel:#141109;
-  --panel-2:#191309;
-  --line:#2B2317;
-  --line-soft:#1E1811;
-  --text:#F3EDE2;
-  --muted:#A99C87;
-  --faint:#6F6350;
-  --accent:#F2A33C;
-  --accent-2:#EE6C4D;
-  --grad:linear-gradient(92deg,#F2A33C 10%,#EE6C4D 90%);
+  --bg:#FFFFFF;
+  --panel:#F7F9FC;
+  --panel-2:#EFF3FA;
+  --line:#DCE3EF;
+  --line-soft:#E9EEF6;
+  --text:#0B1B33;
+  --muted:#4A5A75;
+  --faint:#7C8AA5;
+  --accent:#2563EB;
+  --accent-2:#0EA5E9;
+  --grad:linear-gradient(92deg,#2563EB 10%,#0EA5E9 90%);
   --sans:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   --w:1080px;
@@ -40,7 +40,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-::selection{background:rgba(242,163,60,.30)}
+::selection{background:rgba(37,99,235,.18)}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
@@ -51,7 +51,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 /* ---------- nav ---------- */
 .nav{
   position:sticky;top:0;z-index:50;
-  background:rgba(12,10,8,.82);
+  background:rgba(255,255,255,.85);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line-soft);
 }
@@ -62,7 +62,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
   width:26px;height:26px;flex:none;border-radius:7px;
   background:var(--grad);
   display:grid;place-items:center;
-  color:#1A1206;font-family:var(--mono);font-size:11px;font-weight:600;
+  color:#FFFFFF;font-family:var(--mono);font-size:11px;font-weight:600;
 }
 .nav-links{display:flex;align-items:center;gap:26px;list-style:none}
 .nav-links a{color:var(--muted);font-size:14px;font-weight:500}
@@ -80,8 +80,8 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 .hero-glow{
   position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(700px 340px at 78% 8%,rgba(242,163,60,.10),transparent 65%),
-    radial-gradient(600px 300px at 12% 92%,rgba(238,108,77,.07),transparent 65%);
+    radial-gradient(700px 340px at 78% 8%,rgba(37,99,235,.07),transparent 65%),
+    radial-gradient(600px 300px at 12% 92%,rgba(14,165,233,.06),transparent 65%);
 }
 .hero-inner{position:relative;padding:110px 24px 96px;max-width:var(--w);margin:0 auto}
 .eyebrow{
@@ -105,9 +105,9 @@ h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:tex
   transition:transform .15s ease,border-color .15s ease,background .15s ease;
 }
 .btn:hover{text-decoration:none;transform:translateY(-1px)}
-.btn-primary{background:var(--accent);color:#1A1206}
-.btn-primary:hover{background:#FFBE5C}
-.btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.015)}
+.btn-primary{background:var(--accent);color:#FFFFFF}
+.btn-primary:hover{background:#3B76F5}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(11,27,51,.02)}
 .btn-ghost:hover{border-color:var(--accent)}
 
 /* ---------- focus band ---------- */
@@ -148,16 +148,16 @@ section+section{border-top:1px solid var(--line-soft)}
   padding:26px;
   transition:transform .18s ease,border-color .18s ease;
 }
-.card:hover{transform:translateY(-3px);border-color:#46351C}
+.card:hover{transform:translateY(-3px);border-color:#B9CCF2}
 .card.featured{grid-column:1/-1;background:linear-gradient(180deg,var(--panel-2),var(--panel))}
 .card-tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{
   font-family:var(--mono);font-size:11px;font-weight:500;
   letter-spacing:.08em;text-transform:uppercase;
-  color:var(--accent);border:1px solid rgba(242,163,60,.32);
+  color:var(--accent);border:1px solid rgba(37,99,235,.35);
   border-radius:999px;padding:3px 10px;
 }
-.tag.alt{color:var(--accent-2);border-color:rgba(238,108,77,.32)}
+.tag.alt{color:var(--accent-2);border-color:rgba(14,165,233,.40)}
 .card h3{font-size:1.3rem;font-weight:700;letter-spacing:-.015em}
 .card p{color:var(--muted);font-size:.96rem;max-width:72ch}
 .card p strong{color:var(--text);font-weight:600}
@@ -242,7 +242,7 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
 .card::before{
   content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
   opacity:0;transition:opacity .3s ease;
-  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(242,163,60,.08),transparent 60%);
+  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(37,99,235,.06),transparent 60%);
 }
 .card:hover::before{opacity:1}
 
@@ -251,12 +251,12 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
 .card-body{display:flex;flex-direction:column;gap:14px;min-width:0}
 .card-viz{min-width:0}
 .card-viz svg{display:block;width:100%;height:auto}
-.wf .box{fill:rgba(255,255,255,.02);stroke:var(--line);stroke-width:1}
-.wf .box.hot{fill:rgba(242,163,60,.07);stroke:rgba(242,163,60,.45)}
-.wf text{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.06em;fill:var(--muted)}
+.wf .box{fill:#FFFFFF;stroke:var(--line);stroke-width:1;transition:stroke .45s ease,fill .45s ease}
+.wf .box.hot{fill:rgba(37,99,235,.06);stroke:rgba(37,99,235,.45)}
+.wf text{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.06em;fill:var(--muted);transition:fill .45s ease}
 .wf text.hot{fill:var(--accent)}
 .wf text.sub{font-size:7.5px;fill:var(--faint)}
-.wf .flow{fill:none;stroke:rgba(242,163,60,.30);stroke-width:1;stroke-dasharray:3 5;animation:wfdash 1.4s linear infinite}
+.wf .flow{fill:none;stroke:rgba(37,99,235,.28);stroke-width:1;stroke-dasharray:3 5;animation:wfdash 1.4s linear infinite;transition:stroke .45s ease}
 .wf .dot{fill:var(--accent-2);animation:wfdot var(--t,3s) linear infinite}
 @keyframes wfdash{to{stroke-dashoffset:-8}}
 @keyframes wfdot{
@@ -265,6 +265,13 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
   88%{opacity:1}
   100%{opacity:0;transform:translate(var(--dx,0px),var(--dy,0px))}
 }
+/* Foundry-style sequencing: stages activate one by one, connectors carry it */
+.wf .box.on{stroke:var(--accent);fill:rgba(37,99,235,.10);filter:drop-shadow(0 0 5px rgba(37,99,235,.35))}
+.wf .box.seen{stroke:rgba(37,99,235,.35);fill:rgba(37,99,235,.04)}
+.wf text.on{fill:var(--accent);font-weight:600}
+.wf text.sub.on{fill:var(--accent)}
+.wf .flow.on{stroke:rgba(37,99,235,.85);animation-duration:.5s}
+.wf .flow.seen{stroke:rgba(37,99,235,.45)}
 @media(max-width:860px){
   .card-split{grid-template-columns:1fr}
   .card-split .card-viz{max-width:360px}
@@ -366,30 +373,61 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         </div>
        </div>
        <div class="card-viz" aria-hidden="true">
-        <svg class="wf" viewBox="0 0 320 168">
-          <rect class="box" x="10" y="10" width="90" height="24" rx="6"/>
-          <text x="55" y="26" text-anchor="middle">GTFS 16M/DAY</text>
-          <line class="flow" x1="100" y1="22" x2="130" y2="22"/>
-          <rect class="box hot" x="130" y="10" width="84" height="24" rx="6"/>
-          <text class="hot" x="172" y="26" text-anchor="middle">KINESIS</text>
-          <path class="flow" d="M150 34 V50 H65 V72"/>
-          <path class="flow" d="M194 34 V50 H251 V72"/>
-          <rect class="box" x="10" y="72" width="110" height="24" rx="6"/>
-          <text x="65" y="88" text-anchor="middle">S3 LAKEHOUSE</text>
-          <rect class="box" x="196" y="72" width="110" height="24" rx="6"/>
-          <text x="251" y="88" text-anchor="middle">DYNAMODB</text>
-          <line class="flow" x1="65" y1="96" x2="65" y2="124"/>
-          <text class="sub" x="73" y="112">BRONZE→GOLD</text>
-          <line class="flow" x1="251" y1="96" x2="251" y2="124"/>
-          <rect class="box" x="10" y="124" width="110" height="24" rx="6"/>
-          <text x="65" y="140" text-anchor="middle">XGBOOST</text>
-          <text class="sub" x="65" y="162" text-anchor="middle">IN PROGRESS</text>
-          <rect class="box" x="196" y="124" width="110" height="24" rx="6"/>
-          <text class="hot" x="251" y="140" text-anchor="middle">API /PREDICT</text>
-          <text class="sub" x="251" y="162" text-anchor="middle">&lt;50 MS FEATURES</text>
-          <circle class="dot" cx="100" cy="22" r="2.5" style="--dx:30px;--t:2.2s"/>
-          <circle class="dot" cx="65" cy="96" r="2.5" style="--dy:28px;--t:2.6s;animation-delay:.8s"/>
-          <circle class="dot" cx="251" cy="96" r="2.5" style="--dy:28px;--t:2.6s;animation-delay:1.6s"/>
+        <svg class="wf" viewBox="0 0 320 292">
+          <rect class="box" data-s="0" x="95" y="6" width="130" height="20" rx="5"/>
+          <text data-s="0" x="160" y="20" text-anchor="middle">TRANSLINK API</text>
+          <line class="flow" data-s="1" x1="160" y1="26" x2="160" y2="40"/>
+          <text class="sub" data-s="1" x="167" y="36">① 60 S</text>
+          <rect class="box" data-s="2" x="95" y="40" width="130" height="20" rx="5"/>
+          <text data-s="2" x="160" y="54" text-anchor="middle">LAMBDA POLLER</text>
+          <text class="sub" data-s="2" x="232" y="54">~21K ROWS</text>
+          <line class="flow" data-s="3" x1="160" y1="60" x2="160" y2="74"/>
+          <text class="sub" data-s="3" x="167" y="70">② 900/SEC</text>
+          <rect class="box hot" data-s="4" x="95" y="74" width="130" height="22" rx="6"/>
+          <text class="hot" data-s="4" x="160" y="89" text-anchor="middle">KINESIS</text>
+          <text class="sub" data-s="4" x="232" y="88">1 SHARD · 24H</text>
+          <path class="flow" data-s="5" d="M160 96 V112 H78 V124"/>
+          <path class="flow" data-s="5" d="M160 96 V112 H242 V124"/>
+          <text class="sub" data-s="5" x="14" y="108">③ BATCH</text>
+          <text class="sub" data-s="5" x="262" y="108">④ STREAM</text>
+          <rect class="box" data-s="6" x="14" y="124" width="128" height="20" rx="5"/>
+          <text data-s="6" x="78" y="138" text-anchor="middle">FIREHOSE</text>
+          <rect class="box" data-s="6" x="178" y="124" width="128" height="20" rx="5"/>
+          <text data-s="6" x="242" y="138" text-anchor="middle">ONLINE FEATURES λ</text>
+          <line class="flow" data-s="7" x1="78" y1="144" x2="78" y2="158"/>
+          <text class="sub" data-s="7" x="85" y="154">5 MIN</text>
+          <line class="flow" data-s="7" x1="242" y1="144" x2="242" y2="158"/>
+          <text class="sub" data-s="7" x="249" y="154">~30 S</text>
+          <rect class="box" data-s="8" x="14" y="158" width="128" height="20" rx="5"/>
+          <text data-s="8" x="78" y="172" text-anchor="middle">S3 BRONZE</text>
+          <rect class="box" data-s="8" x="178" y="158" width="128" height="20" rx="5"/>
+          <text data-s="8" x="242" y="172" text-anchor="middle">DYNAMODB</text>
+          <text class="sub" data-s="8" x="180" y="190">2H TTL</text>
+          <line class="flow" data-s="9" x1="78" y1="178" x2="78" y2="192"/>
+          <text class="sub" data-s="9" x="85" y="188">⑤ 02:20 UTC</text>
+          <rect class="box" data-s="10" x="14" y="192" width="128" height="20" rx="5"/>
+          <text data-s="10" x="78" y="206" text-anchor="middle">GLUE SILVER</text>
+          <text class="sub" data-s="10" x="148" y="206">ICEBERG · 79,945</text>
+          <line class="flow" data-s="11" x1="78" y1="212" x2="78" y2="226"/>
+          <text class="sub" data-s="11" x="85" y="222">⑥ DQ GATE</text>
+          <rect class="box" data-s="12" x="14" y="226" width="128" height="20" rx="5"/>
+          <text data-s="12" x="78" y="240" text-anchor="middle">S3 GOLD</text>
+          <line class="flow" data-s="13" x1="78" y1="246" x2="78" y2="262"/>
+          <text class="sub" data-s="13" x="85" y="256">⑦ TRAIN</text>
+          <rect class="box" data-s="14" x="14" y="262" width="128" height="22" rx="5"/>
+          <text data-s="14" x="78" y="277" text-anchor="middle">SAGEMAKER</text>
+          <line class="flow" data-s="15" x1="142" y1="273" x2="150" y2="273"/>
+          <path class="flow" data-s="16" d="M242 178 V240 H220 V262"/>
+          <text class="sub" data-s="16" x="248" y="220">⑨ AT REQUEST</text>
+          <rect class="box hot" data-s="16" x="150" y="262" width="100" height="22" rx="6"/>
+          <text class="hot" data-s="16" x="200" y="277" text-anchor="middle">ENDPOINT</text>
+          <rect class="box" data-s="16" x="258" y="262" width="54" height="22" rx="5"/>
+          <text data-s="16" x="285" y="277" text-anchor="middle">API GW</text>
+          <line class="flow" data-s="16" x1="258" y1="273" x2="250" y2="273"/>
+          <circle class="dot" cx="160" cy="26" r="2.2" style="--dy:14px;--t:2.4s"/>
+          <circle class="dot" cx="78" cy="144" r="2.2" style="--dy:14px;--t:2.6s;animation-delay:.7s"/>
+          <circle class="dot" cx="242" cy="144" r="2.2" style="--dy:14px;--t:2.6s;animation-delay:1.3s"/>
+          <circle class="dot" cx="242" cy="178" r="2.2" style="--dy:62px;--t:3.4s;animation-delay:2s"/>
         </svg>
        </div>
        </div>
@@ -418,22 +456,22 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
        </div>
        <div class="card-viz" aria-hidden="true">
         <svg class="wf" viewBox="0 0 320 168">
-          <rect class="box" x="10" y="12" width="64" height="26" rx="6"/>
-          <text x="42" y="29" text-anchor="middle">REPO</text>
-          <rect class="box" x="104" y="12" width="88" height="26" rx="6"/>
-          <text x="148" y="29" text-anchor="middle">AST PARSE</text>
-          <line class="flow" x1="74" y1="25" x2="104" y2="25"/>
-          <path class="flow" d="M192 25 H236 V68"/>
-          <text class="sub" x="96" y="60">3,820 NODES · 25K EDGES</text>
-          <rect class="box hot" x="96" y="68" width="148" height="30" rx="7"/>
-          <text class="hot" x="150" y="87" text-anchor="middle">KNOWLEDGE GRAPH + ChromaDB</text>
-          <line class="flow" x1="104" y1="98" x2="104" y2="124"/>
-          <line class="flow" x1="132" y1="124" x2="132" y2="98"/>
-          <rect class="box" x="60" y="124" width="88" height="26" rx="6"/>
-          <text x="104" y="141" text-anchor="middle">LLM AGENT</text>
-          <line class="flow" x1="148" y1="137" x2="196" y2="137"/>
-          <rect class="box" x="196" y="124" width="114" height="26" rx="6"/>
-          <text class="hot" x="253" y="141" text-anchor="middle">CITED ANSWER</text>
+          <rect class="box" data-s="0" x="10" y="12" width="64" height="26" rx="6"/>
+          <text data-s="0" x="42" y="29" text-anchor="middle">REPO</text>
+          <line class="flow" data-s="1" x1="74" y1="25" x2="104" y2="25"/>
+          <rect class="box" data-s="2" x="104" y="12" width="88" height="26" rx="6"/>
+          <text data-s="2" x="148" y="29" text-anchor="middle">AST PARSE</text>
+          <path class="flow" data-s="3" d="M192 25 H236 V68"/>
+          <text class="sub" data-s="4" x="96" y="60">3,820 NODES · 25K EDGES</text>
+          <rect class="box hot" data-s="4" x="70" y="68" width="200" height="30" rx="7"/>
+          <text class="hot" data-s="4" x="170" y="87" text-anchor="middle">KNOWLEDGE GRAPH + ChromaDB</text>
+          <line class="flow" data-s="5" x1="104" y1="98" x2="104" y2="124"/>
+          <line class="flow" data-s="5" x1="132" y1="124" x2="132" y2="98"/>
+          <rect class="box" data-s="6" x="60" y="124" width="88" height="26" rx="6"/>
+          <text data-s="6" x="104" y="141" text-anchor="middle">LLM AGENT</text>
+          <line class="flow" data-s="7" x1="148" y1="137" x2="196" y2="137"/>
+          <rect class="box" data-s="8" x="196" y="124" width="114" height="26" rx="6"/>
+          <text class="hot" data-s="8" x="253" y="141" text-anchor="middle">CITED ANSWER</text>
           <circle class="dot" cx="74" cy="25" r="2.5" style="--dx:30px;--t:2.4s"/>
           <circle class="dot" cx="104" cy="98" r="2.5" style="--dy:26px;--t:2.8s;animation-delay:.6s"/>
           <circle class="dot" cx="132" cy="124" r="2.5" style="--dy:-26px;--t:2.8s;animation-delay:2s"/>
@@ -474,25 +512,25 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
        </div>
        <div class="card-viz" aria-hidden="true">
         <svg class="wf" viewBox="0 0 320 168">
-          <rect class="box" x="10" y="10" width="86" height="22" rx="5"/>
-          <text x="53" y="25" text-anchor="middle">MAGNETICS</text>
-          <rect class="box" x="10" y="40" width="86" height="22" rx="5"/>
-          <text x="53" y="55" text-anchor="middle">GRAVITY</text>
-          <rect class="box" x="10" y="70" width="86" height="22" rx="5"/>
-          <text x="53" y="85" text-anchor="middle">SENTINEL-2</text>
-          <path class="flow" d="M96 21 H113 V51 H132"/>
-          <line class="flow" x1="96" y1="51" x2="132" y2="51"/>
-          <path class="flow" d="M96 81 H113 V51"/>
-          <rect class="box" x="132" y="38" width="100" height="26" rx="6"/>
-          <text x="182" y="55" text-anchor="middle">RFE 390→25</text>
-          <line class="flow" x1="182" y1="64" x2="182" y2="96"/>
-          <rect class="box hot" x="122" y="96" width="120" height="28" rx="7"/>
-          <text class="hot" x="182" y="114" text-anchor="middle">CNN / U-NET</text>
-          <text class="sub" x="250" y="107">SPATIAL CV</text>
-          <text class="sub" x="250" y="118">2 KM TILES</text>
-          <line class="flow" x1="182" y1="124" x2="182" y2="140"/>
-          <rect class="box" x="122" y="140" width="120" height="24" rx="6"/>
-          <text class="hot" x="182" y="156" text-anchor="middle">R² 0.65 MAP</text>
+          <rect class="box" data-s="0" x="10" y="10" width="86" height="22" rx="5"/>
+          <text data-s="0" x="53" y="25" text-anchor="middle">MAGNETICS</text>
+          <rect class="box" data-s="0" x="10" y="40" width="86" height="22" rx="5"/>
+          <text data-s="0" x="53" y="55" text-anchor="middle">GRAVITY</text>
+          <rect class="box" data-s="0" x="10" y="70" width="86" height="22" rx="5"/>
+          <text data-s="0" x="53" y="85" text-anchor="middle">SENTINEL-2</text>
+          <path class="flow" data-s="1" d="M96 21 H113 V51 H132"/>
+          <line class="flow" data-s="1" x1="96" y1="51" x2="132" y2="51"/>
+          <path class="flow" data-s="1" d="M96 81 H113 V51"/>
+          <rect class="box" data-s="2" x="132" y="38" width="100" height="26" rx="6"/>
+          <text data-s="2" x="182" y="55" text-anchor="middle">RFE 390→25</text>
+          <line class="flow" data-s="3" x1="182" y1="64" x2="182" y2="96"/>
+          <rect class="box hot" data-s="4" x="122" y="96" width="120" height="28" rx="7"/>
+          <text class="hot" data-s="4" x="182" y="114" text-anchor="middle">CNN / U-NET</text>
+          <text class="sub" data-s="4" x="250" y="107">SPATIAL CV</text>
+          <text class="sub" data-s="4" x="250" y="118">2 KM TILES</text>
+          <line class="flow" data-s="5" x1="182" y1="124" x2="182" y2="140"/>
+          <rect class="box" data-s="6" x="122" y="140" width="120" height="24" rx="6"/>
+          <text class="hot" data-s="6" x="182" y="156" text-anchor="middle">R² 0.65 MAP</text>
           <circle class="dot" cx="96" cy="51" r="2.5" style="--dx:36px;--t:2.4s"/>
           <circle class="dot" cx="182" cy="64" r="2.5" style="--dy:32px;--t:2.6s;animation-delay:.9s"/>
           <circle class="dot" cx="182" cy="124" r="2.5" style="--dy:16px;--t:2.2s;animation-delay:1.8s"/>
@@ -514,25 +552,25 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         </p>
         <div class="card-viz" aria-hidden="true">
           <svg class="wf" viewBox="0 0 560 64">
-            <rect class="box" x="8" y="14" width="84" height="26" rx="6"/>
-            <text x="50" y="31" text-anchor="middle">REVIEWS</text>
-            <text class="sub" x="50" y="54" text-anchor="middle">983K · 1.6M CHUNKS</text>
-            <path class="flow" d="M92 27 H112 V14 H132"/>
-            <path class="flow" d="M92 27 H112 V50 H132"/>
-            <rect class="box" x="132" y="4" width="72" height="20" rx="5"/>
-            <text x="168" y="18" text-anchor="middle">BM25</text>
-            <rect class="box" x="132" y="40" width="72" height="20" rx="5"/>
-            <text x="168" y="54" text-anchor="middle">FAISS</text>
-            <path class="flow" d="M204 14 H224 V27 H240"/>
-            <path class="flow" d="M204 50 H224 V27"/>
-            <rect class="box hot" x="240" y="14" width="64" height="26" rx="6"/>
-            <text class="hot" x="272" y="31" text-anchor="middle">RRF</text>
-            <line class="flow" x1="304" y1="27" x2="330" y2="27"/>
-            <rect class="box" x="330" y="14" width="92" height="26" rx="6"/>
-            <text x="376" y="31" text-anchor="middle">LLAMA 3.3</text>
-            <line class="flow" x1="422" y1="27" x2="448" y2="27"/>
-            <rect class="box" x="448" y="14" width="104" height="26" rx="6"/>
-            <text class="hot" x="500" y="31" text-anchor="middle">ANSWER</text>
+            <rect class="box" data-s="0" x="8" y="14" width="84" height="26" rx="6"/>
+            <text data-s="0" x="50" y="31" text-anchor="middle">REVIEWS</text>
+            <text class="sub" data-s="0" x="50" y="54" text-anchor="middle">983K · 1.6M CHUNKS</text>
+            <path class="flow" data-s="1" d="M92 27 H112 V14 H132"/>
+            <path class="flow" data-s="1" d="M92 27 H112 V50 H132"/>
+            <rect class="box" data-s="2" x="132" y="4" width="72" height="20" rx="5"/>
+            <text data-s="2" x="168" y="18" text-anchor="middle">BM25</text>
+            <rect class="box" data-s="2" x="132" y="40" width="72" height="20" rx="5"/>
+            <text data-s="2" x="168" y="54" text-anchor="middle">FAISS</text>
+            <path class="flow" data-s="3" d="M204 14 H224 V27 H240"/>
+            <path class="flow" data-s="3" d="M204 50 H224 V27"/>
+            <rect class="box hot" data-s="4" x="240" y="14" width="64" height="26" rx="6"/>
+            <text class="hot" data-s="4" x="272" y="31" text-anchor="middle">RRF</text>
+            <line class="flow" data-s="5" x1="304" y1="27" x2="330" y2="27"/>
+            <rect class="box" data-s="6" x="330" y="14" width="92" height="26" rx="6"/>
+            <text data-s="6" x="376" y="31" text-anchor="middle">LLAMA 3.3</text>
+            <line class="flow" data-s="7" x1="422" y1="27" x2="448" y2="27"/>
+            <rect class="box" data-s="8" x="448" y="14" width="104" height="26" rx="6"/>
+            <text class="hot" data-s="8" x="500" y="31" text-anchor="middle">ANSWER</text>
             <circle class="dot" cx="304" cy="27" r="2.5" style="--dx:26px;--t:2.2s"/>
             <circle class="dot" cx="422" cy="27" r="2.5" style="--dx:26px;--t:2.2s;animation-delay:1s"/>
           </svg>
@@ -556,18 +594,18 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         </p>
         <div class="card-viz" aria-hidden="true">
           <svg class="wf" viewBox="0 0 560 64">
-            <rect class="box" x="8" y="14" width="96" height="26" rx="6"/>
-            <text x="56" y="31" text-anchor="middle">CRIME DATA</text>
-            <text class="sub" x="56" y="54" text-anchor="middle">1975–2015</text>
-            <line class="flow" x1="104" y1="27" x2="140" y2="27"/>
-            <rect class="box" x="140" y="14" width="120" height="26" rx="6"/>
-            <text x="200" y="31" text-anchor="middle">PLAIN ENGLISH</text>
-            <line class="flow" x1="260" y1="27" x2="296" y2="27"/>
-            <rect class="box hot" x="296" y="14" width="80" height="26" rx="6"/>
-            <text class="hot" x="336" y="31" text-anchor="middle">CLAUDE</text>
-            <line class="flow" x1="376" y1="27" x2="412" y2="27"/>
-            <rect class="box" x="412" y="14" width="140" height="26" rx="6"/>
-            <text x="482" y="31" text-anchor="middle">ALTAIR CHARTS</text>
+            <rect class="box" data-s="0" x="8" y="14" width="96" height="26" rx="6"/>
+            <text data-s="0" x="56" y="31" text-anchor="middle">CRIME DATA</text>
+            <text class="sub" data-s="0" x="56" y="54" text-anchor="middle">1975–2015</text>
+            <line class="flow" data-s="1" x1="104" y1="27" x2="140" y2="27"/>
+            <rect class="box" data-s="2" x="140" y="14" width="120" height="26" rx="6"/>
+            <text data-s="2" x="200" y="31" text-anchor="middle">PLAIN ENGLISH</text>
+            <line class="flow" data-s="3" x1="260" y1="27" x2="296" y2="27"/>
+            <rect class="box hot" data-s="4" x="296" y="14" width="80" height="26" rx="6"/>
+            <text class="hot" data-s="4" x="336" y="31" text-anchor="middle">CLAUDE</text>
+            <line class="flow" data-s="5" x1="376" y1="27" x2="412" y2="27"/>
+            <rect class="box" data-s="6" x="412" y="14" width="140" height="26" rx="6"/>
+            <text data-s="6" x="482" y="31" text-anchor="middle">ALTAIR CHARTS</text>
             <circle class="dot" cx="104" cy="27" r="2.5" style="--dx:36px;--t:2.4s"/>
             <circle class="dot" cx="260" cy="27" r="2.5" style="--dx:36px;--t:2.4s;animation-delay:.8s"/>
             <circle class="dot" cx="376" cy="27" r="2.5" style="--dx:36px;--t:2.4s;animation-delay:1.6s"/>
@@ -592,22 +630,22 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         </p>
         <div class="card-viz" aria-hidden="true">
           <svg class="wf" viewBox="0 0 560 64">
-            <rect class="box" x="8" y="14" width="76" height="26" rx="6"/>
-            <text x="46" y="31" text-anchor="middle">DATA</text>
-            <line class="flow" x1="84" y1="27" x2="116" y2="27"/>
-            <rect class="box" x="116" y="14" width="96" height="26" rx="6"/>
-            <text x="164" y="31" text-anchor="middle">CONTRACT</text>
-            <text class="sub" x="164" y="54" text-anchor="middle">SCHEMA · RANGES · DRIFT</text>
-            <line class="flow" x1="212" y1="27" x2="240" y2="27"/>
-            <rect class="box hot" x="240" y="14" width="96" height="26" rx="6"/>
-            <text class="hot" x="288" y="31" text-anchor="middle">VALIDATE</text>
-            <line class="flow" x1="336" y1="27" x2="364" y2="27"/>
-            <rect class="box" x="364" y="14" width="76" height="26" rx="6"/>
-            <text x="402" y="31" text-anchor="middle">REPORT</text>
-            <line class="flow" x1="440" y1="27" x2="468" y2="27"/>
-            <rect class="box" x="468" y="14" width="84" height="26" rx="6"/>
-            <text x="510" y="31" text-anchor="middle">TESTPYPI</text>
-            <text class="sub" x="510" y="54" text-anchor="middle">GH ACTIONS</text>
+            <rect class="box" data-s="0" x="8" y="14" width="76" height="26" rx="6"/>
+            <text data-s="0" x="46" y="31" text-anchor="middle">DATA</text>
+            <line class="flow" data-s="1" x1="84" y1="27" x2="116" y2="27"/>
+            <rect class="box" data-s="2" x="116" y="14" width="96" height="26" rx="6"/>
+            <text data-s="2" x="164" y="31" text-anchor="middle">CONTRACT</text>
+            <text class="sub" data-s="2" x="164" y="54" text-anchor="middle">SCHEMA · RANGES · DRIFT</text>
+            <line class="flow" data-s="3" x1="212" y1="27" x2="240" y2="27"/>
+            <rect class="box hot" data-s="4" x="240" y="14" width="96" height="26" rx="6"/>
+            <text class="hot" data-s="4" x="288" y="31" text-anchor="middle">VALIDATE</text>
+            <line class="flow" data-s="5" x1="336" y1="27" x2="364" y2="27"/>
+            <rect class="box" data-s="6" x="364" y="14" width="76" height="26" rx="6"/>
+            <text data-s="6" x="402" y="31" text-anchor="middle">REPORT</text>
+            <line class="flow" data-s="7" x1="440" y1="27" x2="468" y2="27"/>
+            <rect class="box" data-s="8" x="468" y="14" width="84" height="26" rx="6"/>
+            <text data-s="8" x="510" y="31" text-anchor="middle">TESTPYPI</text>
+            <text class="sub" data-s="8" x="510" y="54" text-anchor="middle">GH ACTIONS</text>
             <circle class="dot" cx="84" cy="27" r="2.5" style="--dx:32px;--t:2.2s"/>
             <circle class="dot" cx="336" cy="27" r="2.5" style="--dx:28px;--t:2.2s;animation-delay:.9s"/>
             <circle class="dot" cx="440" cy="27" r="2.5" style="--dx:28px;--t:2.2s;animation-delay:1.7s"/>
@@ -630,17 +668,17 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         </p>
         <div class="card-viz" aria-hidden="true">
           <svg class="wf" viewBox="0 0 560 64">
-            <rect class="box" x="8" y="14" width="110" height="26" rx="6"/>
-            <text x="63" y="31" text-anchor="middle">JOBS DATA</text>
-            <line class="flow" x1="118" y1="27" x2="172" y2="27"/>
-            <rect class="box" x="172" y="14" width="110" height="26" rx="6"/>
-            <text x="227" y="31" text-anchor="middle">ANALYSIS</text>
-            <line class="flow" x1="282" y1="27" x2="336" y2="27"/>
-            <rect class="box hot" x="336" y="14" width="90" height="26" rx="6"/>
-            <text class="hot" x="381" y="31" text-anchor="middle">QUARTO</text>
-            <line class="flow" x1="426" y1="27" x2="470" y2="27"/>
-            <rect class="box" x="470" y="14" width="82" height="26" rx="6"/>
-            <text x="511" y="31" text-anchor="middle">STORY</text>
+            <rect class="box" data-s="0" x="8" y="14" width="110" height="26" rx="6"/>
+            <text data-s="0" x="63" y="31" text-anchor="middle">JOBS DATA</text>
+            <line class="flow" data-s="1" x1="118" y1="27" x2="172" y2="27"/>
+            <rect class="box" data-s="2" x="172" y="14" width="110" height="26" rx="6"/>
+            <text data-s="2" x="227" y="31" text-anchor="middle">ANALYSIS</text>
+            <line class="flow" data-s="3" x1="282" y1="27" x2="336" y2="27"/>
+            <rect class="box hot" data-s="4" x="336" y="14" width="90" height="26" rx="6"/>
+            <text class="hot" data-s="4" x="381" y="31" text-anchor="middle">QUARTO</text>
+            <line class="flow" data-s="5" x1="426" y1="27" x2="470" y2="27"/>
+            <rect class="box" data-s="6" x="470" y="14" width="82" height="26" rx="6"/>
+            <text data-s="6" x="511" y="31" text-anchor="middle">STORY</text>
             <circle class="dot" cx="118" cy="27" r="2.5" style="--dx:54px;--t:2.6s"/>
             <circle class="dot" cx="282" cy="27" r="2.5" style="--dx:54px;--t:2.6s;animation-delay:.9s"/>
             <circle class="dot" cx="426" cy="27" r="2.5" style="--dx:44px;--t:2.4s;animation-delay:1.8s"/>
@@ -803,7 +841,7 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         x:Math.random()*W,y:Math.random()*H,
         vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
         r:1.2+Math.random()*1.8,
-        hue:Math.random()<.72?'242,163,60':'238,108,77'
+        hue:Math.random()<.72?'37,99,235':'14,165,233'
       });
     }
   }
@@ -956,28 +994,28 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
       return{x:cx+r[0]*R*f,y:cy+r[1]*R*f,z:r[2]};
     });
     var g=ctx.createRadialGradient(cx,cy,0,cx,cy,R*2.4);
-    g.addColorStop(0,'rgba(242,163,60,.07)');
-    g.addColorStop(1,'rgba(242,163,60,0)');
+    g.addColorStop(0,'rgba(37,99,235,.06)');
+    g.addColorStop(1,'rgba(37,99,235,0)');
     ctx.fillStyle=g;
     ctx.fillRect(cx-R*2.4,cy-R*2.4,R*4.8,R*4.8);
     for(var i=0;i<E.length;i++){
       var a=P[E[i][0]],b=P[E[i][1]];
       var depth=1-((a.z+b.z)/2+1)/2;
-      ctx.strokeStyle='rgba(242,163,60,'+(.07+.28*depth).toFixed(3)+')';
+      ctx.strokeStyle='rgba(37,99,235,'+(.08+.30*depth).toFixed(3)+')';
       ctx.lineWidth=1;
       ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
     }
     ctx.textBaseline='middle';
     for(var k=0;k<P.length;k++){
       var p=P[k],dp=1-(p.z+1)/2,isF=fi.indexOf(k)>=0;
-      ctx.fillStyle='rgba(238,108,77,'+(.22+.5*dp).toFixed(3)+')';
+      ctx.fillStyle='rgba(14,165,233,'+(.30+.5*dp).toFixed(3)+')';
       ctx.beginPath();ctx.arc(p.x,p.y,1.5+1.6*dp,0,Math.PI*2);ctx.fill();
       var fs=(isF?12:9.5)*(.55+.45*dp);
       ctx.font=(isF?'600 ':'500 ')+fs.toFixed(1)+'px "IBM Plex Mono",monospace';
       ctx.textAlign=p.x>=cx?'left':'right';
       ctx.fillStyle=isF
-        ?'rgba(242,163,60,'+(.45+.5*dp).toFixed(3)+')'
-        :'rgba(243,237,226,'+(.09+.38*dp).toFixed(3)+')';
+        ?'rgba(37,99,235,'+(.50+.5*dp).toFixed(3)+')'
+        :'rgba(11,27,51,'+(.12+.40*dp).toFixed(3)+')';
       ctx.fillText(SKILLS[k],p.x+(7+2*dp)*(p.x>=cx?1:-1),p.y);
     }
   }
@@ -1033,6 +1071,33 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
     });
   },{threshold:.12});
   els.forEach(function(e){io.observe(e)});
+})();
+
+/* Workflow sequencer: walks each diagram stage by stage, Foundry-style.
+   Stages light up in order, connectors carry the activation, then the
+   whole run fades and begins again. */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.querySelectorAll('svg.wf').forEach(function(svg,idx){
+    var els=svg.querySelectorAll('[data-s]');
+    if(!els.length)return;
+    var max=0;
+    els.forEach(function(e){max=Math.max(max,+e.getAttribute('data-s'))});
+    var k=-2-idx;  /* negative start staggers the diagrams */
+    setInterval(function(){
+      k++;
+      if(k>max+2){
+        k=-1;
+        els.forEach(function(e){e.classList.remove('on','seen')});
+        return;
+      }
+      els.forEach(function(e){
+        var s=+e.getAttribute('data-s');
+        if(s===k){e.classList.add('on');e.classList.remove('seen')}
+        else if(s<k){e.classList.remove('on');e.classList.add('seen')}
+      });
+    },850);
+  });
 })();
 
 /* Card cursor glow */
