@@ -338,6 +338,66 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
        <div class="card-split">
        <div class="card-body">
         <div class="card-tags">
+          <span class="tag">Streaming</span><span class="tag">AWS Lakehouse</span>
+          <span class="tag alt">Terraform</span><span class="tag alt">Kinesis</span>
+        </div>
+        <h3>TransitPulse BC: Streaming Transit Lakehouse</h3>
+        <p>
+          A streaming lakehouse on AWS ingesting Metro Vancouver's live transit feed —
+          <strong>~16 million events a day</strong> of GTFS-Realtime protobuf, polled every 60
+          seconds — built to predict bus arrival delay against a baseline anyone can check: the
+          published schedule. The stream splits at <strong>Kinesis</strong> into two independent
+          paths: a live path keeping current delay state in DynamoDB (serving features in
+          under 50&nbsp;ms), and a batch path landing Parquet in an S3 medallion lakehouse, where
+          a nightly Spark job collapses ~25 repeated predictions per arrival into one labelled row
+          (<strong>2,021,771&nbsp;→&nbsp;79,945</strong>) and a five-rule quality gate routes bad
+          days to quarantine instead of crashing the pipeline.
+        </p>
+        <p>
+          <strong>~120 AWS resources, all Terraform. Zero EC2 instances. ~$0.70/day.</strong>
+          The platform is verified end to end and ingesting continuously; the XGBoost modelling
+          layer is in progress while training data accumulates — no accuracy numbers claimed
+          until the model has earned them.
+        </p>
+        <div class="card-links">
+          <a href="interview-brief.html" target="_blank" rel="noopener">Technical brief ↗</a>
+          <span class="mono" style="color:var(--faint);font-size:13px">Live platform · model training pending</span>
+        </div>
+       </div>
+       <div class="card-viz" aria-hidden="true">
+        <svg class="wf" viewBox="0 0 320 168">
+          <rect class="box" x="10" y="10" width="90" height="24" rx="6"/>
+          <text x="55" y="26" text-anchor="middle">GTFS 16M/DAY</text>
+          <line class="flow" x1="100" y1="22" x2="130" y2="22"/>
+          <rect class="box hot" x="130" y="10" width="84" height="24" rx="6"/>
+          <text class="hot" x="172" y="26" text-anchor="middle">KINESIS</text>
+          <path class="flow" d="M150 34 V50 H65 V72"/>
+          <path class="flow" d="M194 34 V50 H251 V72"/>
+          <rect class="box" x="10" y="72" width="110" height="24" rx="6"/>
+          <text x="65" y="88" text-anchor="middle">S3 LAKEHOUSE</text>
+          <rect class="box" x="196" y="72" width="110" height="24" rx="6"/>
+          <text x="251" y="88" text-anchor="middle">DYNAMODB</text>
+          <line class="flow" x1="65" y1="96" x2="65" y2="124"/>
+          <text class="sub" x="73" y="112">BRONZE→GOLD</text>
+          <line class="flow" x1="251" y1="96" x2="251" y2="124"/>
+          <rect class="box" x="10" y="124" width="110" height="24" rx="6"/>
+          <text x="65" y="140" text-anchor="middle">XGBOOST</text>
+          <text class="sub" x="65" y="162" text-anchor="middle">IN PROGRESS</text>
+          <rect class="box" x="196" y="124" width="110" height="24" rx="6"/>
+          <text class="hot" x="251" y="140" text-anchor="middle">API /PREDICT</text>
+          <text class="sub" x="251" y="162" text-anchor="middle">&lt;50 MS FEATURES</text>
+          <circle class="dot" cx="100" cy="22" r="2.5" style="--dx:30px;--t:2.2s"/>
+          <circle class="dot" cx="65" cy="96" r="2.5" style="--dy:28px;--t:2.6s;animation-delay:.8s"/>
+          <circle class="dot" cx="251" cy="96" r="2.5" style="--dy:28px;--t:2.6s;animation-delay:1.6s"/>
+        </svg>
+       </div>
+       </div>
+      </article>
+
+      <article class="card featured reveal">
+       <div class="card-split">
+       <div class="card-body">
+        <div class="card-tags">
           <span class="tag">GraphRAG</span><span class="tag">Knowledge graph</span>
           <span class="tag alt">LLM agents</span><span class="tag alt">Docker</span>
         </div>
@@ -662,7 +722,8 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         <span class="chip">Databricks</span><span class="chip">PySpark</span><span class="chip">DuckDB</span>
         <span class="chip">Parquet</span><span class="chip">MongoDB</span><span class="chip">Vector DBs</span>
         <span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">MLflow</span>
-        <span class="chip">AWS</span>
+        <span class="chip">AWS</span><span class="chip">Terraform</span><span class="chip">Kinesis</span>
+        <span class="chip">Apache Iceberg</span>
       </div>
     </div>
     <div class="skill-row reveal">

@@ -1,0 +1,147 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+% Formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{3pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\LARGE \textbf{MANIKANTH GOUD GURUJALA}}\\[6pt]
+    +1 (604) 365-7680 | \href{mailto:manikanthgoud27@gmail.com}{manikanthgoud27@gmail.com} |
+    \href{https://www.linkedin.com/in/gurujala-manikanth-goud/}{LinkedIn} |
+    \href{https://github.com/goudmani}{GitHub} |
+    \href{https://goudmani.github.io/porfolio/}{Portfolio} |
+    Vancouver, BC
+\end{center}
+
+\section*{PROFILE SUMMARY}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt]
+    \item \textbf{Data science} practitioner with hands-on experience across the full workflow:
+    \textbf{exploratory data analysis}, \textbf{data cleaning} and preprocessing, \textbf{machine
+    learning} model building (regression, classification, clustering) in \textbf{Python}
+    (\textbf{Pandas}, \textbf{NumPy}, \textbf{Scikit-learn}), and communicating findings to
+    cross-functional stakeholders.
+    \item Experienced across the \textbf{ML lifecycle} from \textbf{prototyping to production},
+    applying software engineering best practices: automated \textbf{testing}, \textbf{code
+    reviews}, \textbf{CI/CD}, \textbf{Git}, and cloud deployment (\textbf{AWS}).
+    \item UBC \textbf{Master of Data Science} graduate (June 2026), strong \textbf{SQL}
+    foundations, \textbf{data visualization} (Altair), and hands-on depth in \textbf{deep
+    learning} (\textbf{PyTorch}).
+\end{itemize}
+
+\section*{EDUCATION}
+
+\textbf{\href{https://masterdatascience.ubc.ca/programs/vancouver}{Master of Data Science}} \hfill \small{Sept 2025 -- Jun 2026}\\
+The University of British Columbia (UBC), Vancouver, BC \\
+Relevant Courses: Machine Learning, Big Data Systems, Time Series Analysis, Causal Inference.
+
+\textbf{\href{https://www.apu.edu.my/course/bachelor-of-mechatronic-engineering}{Bachelor of Mechatronic Engineering with Honors}} \hfill \small{Nov 2019 -- Mar 2024}\\
+Asia Pacific University of Technology and Innovation (APU), Kuala Lumpur, Malaysia
+
+\section*{WORK EXPERIENCE}
+
+\textbf{Data Scientist - VRIFY (Capstone)}, Vancouver, BC \hfill \small{Apr 2026 -- Jun 2026}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt]
+    \item Owned a project end to end: \textbf{exploratory data analysis} and preprocessing,
+    \textbf{feature engineering} (reduced 360+ features via \textbf{RFE} and multicollinearity
+    analysis), offline experimentation benchmarking three \textbf{machine learning} architectures,
+    and packaging the final model for production deployment.
+    \item Diagnosed a hidden flaw in an initial evaluation setup producing misleadingly strong
+    results, implemented rigorous \textbf{validation} as a quality gate, and documented workflows
+    and findings for the team.
+    \item Built scalable \textbf{data pipelines} on \textbf{Databricks} ingesting multi-source
+    datasets with client data-anonymisation protocols, supporting model training and analysis.
+    \item Integrated \textbf{SHAP} explainability and built visual diagnostics (scatter, residual,
+    and spatial plots) to interpret model predictions and present actionable insights to
+    cross-functional domain experts.
+    \item Collaborated with a cross-functional team of data scientists and domain experts,
+    presenting findings and trade-offs through regular check-ins over a 3-month timeline.
+\end{itemize}
+
+\textbf{AI/ML Intern}, UltraTech Cement, Mumbai, India \hfill \small{Oct 2024 -- Dec 2024}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt]
+    \item Deployed \textbf{YOLOv8} inference models for \textbf{real-time production}
+    monitoring across multiple industrial sites, achieving 88\%+ detection accuracy and
+    improving response times by 30\%.
+    \item Built anomaly detection models and \textbf{monitoring dashboards} with observability
+    into model performance and costs, cutting costs by 15\% and manual reporting time by 40\%.
+\end{itemize}
+
+\section*{TECHNICAL PROJECTS}
+
+\textbf{\href{https://github.com/goudmani/codeiq_source_code_knowledge_graph}{CodeIQ: Source Code Knowledge Graph}}, HCLTech $\times$ UBC AI/ML program \hfill \small{July 2026}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt]
+    \item Built a code intelligence tool that parses a 100K-line codebase into a queryable
+    \textbf{knowledge graph} (3,820 entities, 25,000 edges) via AST extraction, letting
+    developers and \textbf{LLM agents} query code structure and change impact in plain English.
+    \item Layered a \textbf{ChromaDB} semantic vector index over the graph so answers cite real
+    file paths and code snippets; packaged the full pipeline as a one-command, resumable
+    \textbf{Docker} Compose workflow.
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{\href{https://github.com/goudmani/Amazon_movie_recommendation_using_RAG}{Hybrid RAG Retrieval System (983K Amazon Reviews)}} \hfill \small{April 2026}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt]
+    \item Built a hybrid retrieval pipeline over 983K Amazon reviews (1.6M indexed chunks):
+    \textbf{BM25} and \textbf{FAISS} rankings fused via Reciprocal Rank Fusion, with an LLM
+    answer layer and a web-search fallback.
+    \item Ran retrieval-metric evaluation and an LLM comparison study;
+    \href{https://informationbm25semantic.streamlit.app/}{deployed live on Streamlit Cloud}.
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{\href{https://github.com/goudmani/US_crime_dashboard}{North American Crime Dashboard}}, UBC \hfill \small{March 2026}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt]
+    \item Built and \href{https://019c9723-a4d1-3cd7-eb5c-fa163f62eb99.share.connect.posit.cloud/}{deployed}
+    a \textbf{Shiny} for Python dashboard with \textbf{data visualization} (Altair) and a
+    natural-language query tab.
+\end{itemize}
+
+\vspace{1pt}
+
+\textbf{\href{https://github.com/UBC-MDS/DSCI_524_G26_Data_Validation}{ML Infrastructure \& CI/CD: Open Source Python Package}}, UBC \hfill \small{Feb 2026}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt]
+    \item Designed a modular \textbf{Python} package for data validation with \textbf{Git}
+    version control and automated \textbf{GitHub Actions} CI/CD.
+\end{itemize}
+
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt]
+    \item \textbf{Data Science:} \textbf{Python} (\textbf{Pandas}, \textbf{NumPy},
+    \textbf{Scikit-learn}), \textbf{exploratory data analysis}, \textbf{data visualization}
+    (Altair, Streamlit), regression, classification, clustering, \textbf{Feature Engineering},
+    A/B Testing.
+    \item \textbf{ML \& Deep Learning:} \textbf{PyTorch}, XGBoost, LightGBM, CatBoost, Optuna,
+    CNNs, Transformers, \textbf{Time Series Forecasting}, \textbf{Causal Inference}.
+    \item \textbf{Software Engineering:} modular system design, automated \textbf{testing}
+    (unit/integration), \textbf{code reviews}, coding standards, \textbf{source control}
+    (\textbf{Git}), \textbf{microservices} (\textbf{FastAPI}), technical
+    \textbf{documentation}.
+    \item \textbf{DevOps \& MLOps:} \textbf{CI/CD} (GitHub Actions), \textbf{Docker}
+    containers, \textbf{Model Registry}, \textbf{MLflow}, \textbf{AWS}, Claude Code.
+    \item \textbf{Data \& Databases:} \textbf{SQL}, MongoDB, \textbf{Databricks},
+    \textbf{PySpark}, DuckDB, Parquet, GraphDB, VectorDB, \textbf{Big Data Analytics}.
+    \item \textbf{LLM Systems:} LLM APIs (Anthropic), \textbf{RAG} (BM25 + FAISS),
+    \textbf{GraphRAG}, LangChain, LangGraph, Prompt Engineering.
+\end{itemize}
+
+\end{document}
