@@ -343,9 +343,9 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         </div>
         <h3>TransitPulse BC: Streaming Transit Lakehouse</h3>
         <p>
-          A streaming lakehouse on AWS ingesting Metro Vancouver's live transit feed —
+          A streaming lakehouse on AWS ingesting Metro Vancouver's live transit feed:
           <strong>~16 million events a day</strong> of GTFS-Realtime protobuf, polled every 60
-          seconds — built to predict bus arrival delay against a baseline anyone can check: the
+          seconds. Built to predict bus arrival delay against a baseline anyone can check, the
           published schedule. The stream splits at <strong>Kinesis</strong> into two independent
           paths: a live path keeping current delay state in DynamoDB (serving features in
           under 50&nbsp;ms), and a batch path landing Parquet in an S3 medallion lakehouse, where
@@ -356,7 +356,7 @@ footer{border-top:1px solid var(--line-soft);padding:28px 0}
         <p>
           <strong>~120 AWS resources, all Terraform. Zero EC2 instances. ~$0.70/day.</strong>
           The platform is verified end to end and ingesting continuously; the XGBoost modelling
-          layer is in progress while training data accumulates — no accuracy numbers claimed
+          layer is in progress while training data accumulates. No accuracy numbers claimed
           until the model has earned them.
         </p>
         <div class="card-links">
